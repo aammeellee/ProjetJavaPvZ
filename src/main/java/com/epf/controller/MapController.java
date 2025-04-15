@@ -3,6 +3,7 @@ package com.epf.controller;
 import com.epf.dto.MapDTO;
 import com.epf.model.Map;
 import com.epf.service.MapService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,14 +37,14 @@ public class MapController {
     }
 
     @PostMapping
-    public ResponseEntity<Integer> insert(@RequestBody MapDTO mapDTO) {
+    public ResponseEntity<Integer> insert(@RequestBody @Valid MapDTO mapDTO) {
         Map map = new Map(0, mapDTO.getLigne(), mapDTO.getColonne(), mapDTO.getCheminImage());
         int result = mapService.insert(map);
         return ResponseEntity.ok(result);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody MapDTO mapDTO) {
+    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody @Valid MapDTO mapDTO) {
         Map map = new Map(id, mapDTO.getLigne(), mapDTO.getColonne(), mapDTO.getCheminImage());
         int result = mapService.update(map);
         return ResponseEntity.ok(result);

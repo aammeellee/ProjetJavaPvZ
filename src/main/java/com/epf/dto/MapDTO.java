@@ -1,16 +1,22 @@
 package com.epf.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class MapDTO {
 
     @JsonProperty("id_map")
     private int id;
 
+    @Min(value = 1, message = "Le nombre de lignes doit être supérieur ou égal à 1.")
     private int ligne;
 
+    @Min(value = 1, message = "Le nombre de colonnes doit être supérieur ou égal à 1.")
     private int colonne;
 
+    @NotBlank(message = "Le chemin de l'image est obligatoire.")
     @JsonProperty("chemin_image")
     private String cheminImage;
 

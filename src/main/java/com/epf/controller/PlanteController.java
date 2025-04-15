@@ -3,6 +3,7 @@ package com.epf.controller;
 import com.epf.dto.PlanteDTO;
 import com.epf.model.Plante;
 import com.epf.service.PlanteService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,7 @@ public class PlanteController {
     }
 
     @PostMapping
-    public ResponseEntity<Integer> insert(@RequestBody PlanteDTO dto) {
+    public ResponseEntity<Integer> insert(@RequestBody @Valid PlanteDTO dto) {
         Plante plante = new Plante(0, dto.getNom(), dto.getPointDeVie(),
                 dto.getAttaqueParSeconde(), dto.getDegatAttaque(),
                 dto.getCout(), dto.getSoleilParSeconde(), dto.getEffet(), dto.getCheminImage());
@@ -51,7 +52,7 @@ public class PlanteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody PlanteDTO dto) {
+    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody @Valid PlanteDTO dto) {
         Plante plante = new Plante(id, dto.getNom(), dto.getPointDeVie(),
                 dto.getAttaqueParSeconde(), dto.getDegatAttaque(),
                 dto.getCout(), dto.getSoleilParSeconde(), dto.getEffet(), dto.getCheminImage());

@@ -1,29 +1,37 @@
 package com.epf.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 
 public class ZombieDTO {
 
     @JsonProperty("id_zombie")
     private int id;
 
+    @NotBlank(message = "Le nom du zombie est obligatoire.")
     private String nom;
 
+    @Min(value = 1, message = "Le point de vie doit être supérieur ou égal à 1.")
     @JsonProperty("point_de_vie")
     private int pointDeVie;
 
+    @PositiveOrZero(message = "L'attaque par seconde ne peut pas être négative.")
     @JsonProperty("attaque_par_seconde")
     private double attaqueParSeconde;
 
+    @PositiveOrZero(message = "Le dégât d'attaque ne peut pas être négatif.")
     @JsonProperty("degat_attaque")
     private int degatAttaque;
 
+    @PositiveOrZero(message = "La vitesse de déplacement ne peut pas être négative.")
     @JsonProperty("vitesse_de_deplacement")
     private double vitesseDeDeplacement;
 
+    @NotBlank(message = "Le chemin de l'image est obligatoire.")
     @JsonProperty("chemin_image")
     private String cheminImage;
 
+    @NotNull(message = "L'id de la map est obligatoire.")
     @JsonProperty("id_map")
     private Integer idMap;
 

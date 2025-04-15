@@ -3,6 +3,7 @@ package com.epf.controller;
 import com.epf.dto.ZombieDTO;
 import com.epf.model.Zombie;
 import com.epf.service.ZombieService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,7 @@ public class ZombieController {
     }
 
     @PostMapping
-    public ResponseEntity<Integer> insert(@RequestBody ZombieDTO dto) {
+    public ResponseEntity<Integer> insert(@RequestBody @Valid ZombieDTO dto) {
         Zombie zombie = new Zombie(0, dto.getNom(), dto.getPointDeVie(),
                 dto.getAttaqueParSeconde(), dto.getDegatAttaque(),
                 dto.getVitesseDeDeplacement(), dto.getCheminImage(), dto.getIdMap());
@@ -51,7 +52,7 @@ public class ZombieController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody ZombieDTO dto) {
+    public ResponseEntity<Integer> update(@PathVariable("id") int id, @RequestBody @Valid ZombieDTO dto) {
         Zombie zombie = new Zombie(id, dto.getNom(), dto.getPointDeVie(),
                 dto.getAttaqueParSeconde(), dto.getDegatAttaque(),
                 dto.getVitesseDeDeplacement(), dto.getCheminImage(), dto.getIdMap());

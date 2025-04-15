@@ -1,30 +1,38 @@
 package com.epf.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 
 public class PlanteDTO {
 
     @JsonProperty("id_plante")
     private int id;
 
+    @NotBlank(message = "Le nom de la plante est obligatoire.")
     private String nom;
 
+    @Min(value = 1, message = "Le point de vie doit être supérieur ou égal à 1.")
     @JsonProperty("point_de_vie")
     private int pointDeVie;
 
+    @PositiveOrZero(message = "L'attaque par seconde ne peut pas être négative.")
     @JsonProperty("attaque_par_seconde")
     private double attaqueParSeconde;
 
+    @PositiveOrZero(message = "Le dégât d'attaque ne peut pas être négatif.")
     @JsonProperty("degat_attaque")
     private int degatAttaque;
 
+    @PositiveOrZero(message = "Le coût ne peut pas être négatif.")
     private int cout;
 
+    @PositiveOrZero(message = "Le soleil par seconde ne peut pas être négatif.")
     @JsonProperty("soleil_par_seconde")
     private double soleilParSeconde;
 
     private String effet;
 
+    @NotBlank(message = "Le chemin de l'image est obligatoire.")
     @JsonProperty("chemin_image")
     private String cheminImage;
 
