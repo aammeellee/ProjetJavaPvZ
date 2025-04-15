@@ -1,20 +1,37 @@
 package com.epf.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ZombieDTO {
+
+    @JsonProperty("id_zombie")
     private int id;
+
     private String nom;
+
+    @JsonProperty("point_de_vie")
     private int pointDeVie;
+
+    @JsonProperty("attaque_par_seconde")
     private double attaqueParSeconde;
+
+    @JsonProperty("degat_attaque")
     private int degatAttaque;
+
+    @JsonProperty("vitesse_de_deplacement")
     private double vitesseDeDeplacement;
+
+    @JsonProperty("chemin_image")
     private String cheminImage;
-    private int idMap;
+
+    @JsonProperty("id_map")
+    private Integer idMap;
 
     public ZombieDTO() {
     }
 
     public ZombieDTO(int id, String nom, int pointDeVie, double attaqueParSeconde, int degatAttaque,
-                     double vitesseDeDeplacement, String cheminImage, int idMap) {
+                     double vitesseDeDeplacement, String cheminImage, Integer idMap) {
         this.id = id;
         this.nom = nom;
         this.pointDeVie = pointDeVie;
@@ -32,5 +49,5 @@ public class ZombieDTO {
     public int getDegatAttaque() { return degatAttaque; }
     public double getVitesseDeDeplacement() { return vitesseDeDeplacement; }
     public String getCheminImage() { return cheminImage; }
-    public int getIdMap() { return idMap; }
+    public Integer getIdMap() { return idMap; }
 }

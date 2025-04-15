@@ -51,7 +51,13 @@ public class MapDaoImpl implements MapDao {
 
     @Override
     public int delete(int id) {
-        String sql = "DELETE FROM map WHERE id_map = ?";
-        return jdbcTemplate.update(sql, id);
+        // 1. Supprimer les zombies associés à la map
+        String sqlDeleteZombies = "DELETE FROM zombie WHERE id_map = ?";
+        jdbcTemplate.update(sqlDeleteZombies, id);
+
+        // 2. Supprimer ensuite la map
+        String sqlDeleteMap = "DELETE FROM map WHERE id_map = ?";
+        return jdbcTemplate.update(sqlDeleteMap, id);
     }
+
 }

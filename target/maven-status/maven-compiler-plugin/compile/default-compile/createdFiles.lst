@@ -9,15 +9,16 @@ com\epf\service\MapService.class
 com\epf\controller\ZombieController.class
 com\epf\dto\ZombieDTO.class
 com\epf\service\PlanteService.class
+com\epf\config\CorsFilter.class
 com\epf\dto\PlanteDTO.class
 com\epf\model\Plante.class
 com\epf\config\DatabaseConfig.class
 com\epf\dao\PlanteDao.class
+com\epf\config\WebConfig.class
 com\epf\model\Map.class
 com\epf\controller\PlanteController.class
 com\epf\dao\ZombieDaoImpl.class
 com\epf\dao\ZombieDao.class
 com\epf\dto\MapDTO.class
 com\epf\service\ZombieServiceImpl.class
-com\epf\Main.class
 com\epf\model\Zombie.class

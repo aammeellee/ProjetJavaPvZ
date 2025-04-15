@@ -8,12 +8,12 @@ public class Zombie {
     private int degatAttaque;
     private double vitesseDeDeplacement;
     private String cheminImage;
-    private int idMap;
+    private Integer idMap;
 
     public Zombie() {}
 
     public Zombie(int idZombie, String nom, int pointDeVie, double attaqueParSeconde,
-                  int degatAttaque, double vitesseDeDeplacement, String cheminImage, int idMap) {
+                  int degatAttaque, double vitesseDeDeplacement, String cheminImage, Integer idMap) {
         this.idZombie = idZombie;
         this.nom = nom;
         this.pointDeVie = pointDeVie;
@@ -80,11 +80,11 @@ public class Zombie {
         this.cheminImage = cheminImage;
     }
 
-    public int getIdMap() {
+    public Integer getIdMap() {
         return idMap;
     }
 
-    public void setIdMap(int idMap) {
+    public void setIdMap(Integer idMap) {
         this.idMap = idMap;
     }
 

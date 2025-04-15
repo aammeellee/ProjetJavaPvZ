@@ -1,14 +1,31 @@
 package com.epf.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PlanteDTO {
+
+    @JsonProperty("id_plante")
     private int id;
+
     private String nom;
+
+    @JsonProperty("point_de_vie")
     private int pointDeVie;
+
+    @JsonProperty("attaque_par_seconde")
     private double attaqueParSeconde;
+
+    @JsonProperty("degat_attaque")
     private int degatAttaque;
+
     private int cout;
+
+    @JsonProperty("soleil_par_seconde")
     private double soleilParSeconde;
+
     private String effet;
+
+    @JsonProperty("chemin_image")
     private String cheminImage;
 
     public PlanteDTO() {
