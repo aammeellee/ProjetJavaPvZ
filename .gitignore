@@ -1,0 +1,38 @@
+# 👉 IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# 👉 Maven
+target/
+logs/
+*.log
+dependency-reduced-pom.xml
+
+# 👉 OS stuff
+.DS_Store
+Thumbs.db
+
+# 👉 Env perso
+.env
+database.properties
+
+# 👉 Tests et config
+hs_err_pid*
+*.swp
+*.swo
+
+# 👉 Fichiers générés
+*.war
+*.class
+
+# 👉 Dossiers éventuels
+/.vscode/
+/out/
+/bin/
+/docs/openapi.yaml
+
+# 👉 Sauvegardes
+*.bak
+*.old
