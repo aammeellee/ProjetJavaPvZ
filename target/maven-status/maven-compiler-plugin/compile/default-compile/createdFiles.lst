@@ -7,6 +7,7 @@ com\epf\service\ZombieService.class
 com\epf\dao\MapDaoImpl.class
 com\epf\service\MapService.class
 com\epf\controller\ZombieController.class
+com\epf\config\GlobalExceptionHandler.class
 com\epf\dto\ZombieDTO.class
 com\epf\service\PlanteService.class
 com\epf\config\CorsFilter.class
@@ -21,4 +22,5 @@ com\epf\dao\ZombieDaoImpl.class
 com\epf\dao\ZombieDao.class
 com\epf\dto\MapDTO.class
 com\epf\service\ZombieServiceImpl.class
+com\epf\exception\ResourceNotFoundException.class
 com\epf\model\Zombie.class

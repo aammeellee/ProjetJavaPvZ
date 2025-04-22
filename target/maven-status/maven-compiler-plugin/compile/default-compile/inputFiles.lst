@@ -1,5 +1,6 @@
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\config\CorsFilter.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\config\DatabaseConfig.java
+C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\config\GlobalExceptionHandler.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\config\WebConfig.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\controller\MapController.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\controller\PlanteController.java
@@ -13,6 +14,7 @@ C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\dao\ZombieDaoImpl.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\dto\MapDTO.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\dto\PlanteDTO.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\dto\ZombieDTO.java
+C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\exception\ResourceNotFoundException.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\model\Map.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\model\Plante.java
 C:\Users\abdia\ProjetJavaPvZ\src\main\java\com\epf\model\Zombie.java

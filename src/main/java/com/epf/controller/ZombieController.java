@@ -1,6 +1,7 @@
 package com.epf.controller;
 
 import com.epf.dto.ZombieDTO;
+import com.epf.exception.ResourceNotFoundException;
 import com.epf.model.Zombie;
 import com.epf.service.ZombieService;
 import jakarta.validation.Valid;
@@ -8,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/zombies")
@@ -35,12 +35,16 @@ public class ZombieController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ZombieDTO> getById(@PathVariable("id") int id) {
-        Optional<Zombie> zombie = zombieService.getById(id);
-        return zombie.map(z -> ResponseEntity.ok(new ZombieDTO(
-                z.getIdZombie(), z.getNom(), z.getPointDeVie(),
-                z.getAttaqueParSeconde(), z.getDegatAttaque(),
-                z.getVitesseDeDeplacement(), z.getCheminImage(), z.getIdMap()
-        ))).orElseGet(() -> ResponseEntity.notFound().build());
+        Zombie zombie = zombieService.getById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Zombie avec l'id " + id + " non trouvé."));
+
+        ZombieDTO dto = new ZombieDTO(
+                zombie.getIdZombie(), zombie.getNom(), zombie.getPointDeVie(),
+                zombie.getAttaqueParSeconde(), zombie.getDegatAttaque(),
+                zombie.getVitesseDeDeplacement(), zombie.getCheminImage(), zombie.getIdMap()
+        );
+
+        return ResponseEntity.ok(dto);
     }
 
     @PostMapping
