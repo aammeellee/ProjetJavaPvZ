@@ -11,7 +11,7 @@ public class ZombieDTO {
     @NotBlank(message = "Le nom du zombie est obligatoire.")
     private String nom;
 
-    @Min(value = 1, message = "Le point de vie doit être supérieur ou égal à 1.")
+    @Min(value = 0, message = "Le point de vie ne peut pas être négatif.")
     @JsonProperty("point_de_vie")
     private int pointDeVie;
 
@@ -27,9 +27,8 @@ public class ZombieDTO {
     @JsonProperty("vitesse_de_deplacement")
     private double vitesseDeDeplacement;
 
-    @NotBlank(message = "Le chemin de l'image est obligatoire.")
     @JsonProperty("chemin_image")
-    private String cheminImage;
+    private String cheminImage; // facultatif en PUT
 
     @NotNull(message = "L'id de la map est obligatoire.")
     @JsonProperty("id_map")

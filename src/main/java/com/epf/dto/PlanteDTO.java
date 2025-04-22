@@ -11,7 +11,7 @@ public class PlanteDTO {
     @NotBlank(message = "Le nom de la plante est obligatoire.")
     private String nom;
 
-    @Min(value = 1, message = "Le point de vie doit être supérieur ou égal à 1.")
+    @Min(value = 0, message = "Le point de vie ne peut pas être négatif.")
     @JsonProperty("point_de_vie")
     private int pointDeVie;
 
@@ -32,9 +32,8 @@ public class PlanteDTO {
 
     private String effet;
 
-    @NotBlank(message = "Le chemin de l'image est obligatoire.")
     @JsonProperty("chemin_image")
-    private String cheminImage;
+    private String cheminImage; // Peut être null sur PUT
 
     public PlanteDTO() {
     }
