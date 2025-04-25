@@ -28,7 +28,7 @@ public class ZombieDTO {
     private double vitesseDeDeplacement;
 
     @JsonProperty("chemin_image")
-    private String cheminImage; // facultatif en PUT
+    private String cheminImage; 
 
     @NotNull(message = "L'id de la map est obligatoire.")
     @JsonProperty("id_map")
