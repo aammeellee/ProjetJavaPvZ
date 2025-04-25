@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.epf.config.DatabaseConfig;
 
-@SpringJUnitConfig(classes = DatabaseConfig.class)
+@SpringJUnitConfig(classes = DataSourceTestConfig.class)
 
 public class DatabaseConnexionTest {
 

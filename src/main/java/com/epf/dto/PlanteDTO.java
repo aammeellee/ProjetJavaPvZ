@@ -33,7 +33,7 @@ public class PlanteDTO {
     private String effet;
 
     @JsonProperty("chemin_image")
-    private String cheminImage; // Peut être null sur PUT
+    private String cheminImage;
 
     public PlanteDTO() {
     }
