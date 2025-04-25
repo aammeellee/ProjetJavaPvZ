@@ -15,7 +15,7 @@ public class MapDTO {
     private int colonne;
 
     @JsonProperty("chemin_image")
-    private String cheminImage; // Autorisé à être null pour un PUT
+    private String cheminImage; 
 
     public MapDTO() {
     }
