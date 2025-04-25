@@ -1,4 +1,3 @@
-// 🔹 ZombieController.java
 package com.epf.controller;
 
 import com.epf.dto.ZombieDTO;
