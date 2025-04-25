@@ -8,8 +8,16 @@
                 https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <http>
-        <intercept-url pattern="/**" access="hasRole('USER')" />
+        <intercept-url pattern="/**" access="permitAll" />
+
+
         <http-basic />
+
+        <csrf disabled="true" />
+
+        <headers>
+            <frame-options policy="SAMEORIGIN"/>
+        </headers>
     </http>
 
     <authentication-manager>
