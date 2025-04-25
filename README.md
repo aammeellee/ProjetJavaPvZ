@@ -1,4 +1,4 @@
-# Projet Java PvZ - Backend API REST
+# Projet Java PvZ 
 
 ## Objectif
 
